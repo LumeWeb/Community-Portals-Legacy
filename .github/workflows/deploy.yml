@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Skynet
-        uses: LumeWeb/deploy-to-skynet-action@master
+        uses: LumeWeb/deploy-to-skynet-action@main
         with:
             upload-file: portals.json
             github-token: ${{ secrets.GITHUB_TOKEN }}
