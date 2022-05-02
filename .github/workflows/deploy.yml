@@ -1,0 +1,22 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Deploy Portal List
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to Skynet
+        uses: LumeWeb/deploy-to-skynet-action
+        with:
+            upload-file: portals.json
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            portal-url: https://fileportal.org
+            registry-seed: ${{ secrets.REGISTRY_SEED }}
+            registry-datakey: "community-portals"
