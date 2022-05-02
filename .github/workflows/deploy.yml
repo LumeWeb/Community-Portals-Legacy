@@ -15,7 +15,7 @@ jobs:
             -   name: Validate JSON
                 uses: OrRosenblatt/validate-json-action@0.1.0
                 with:
-                    INPUT_JSONS: portals.json
+                    json: portals.json
             -   name: Deploy to Skynet
                 uses: LumeWeb/deploy-to-skynet-action@main
                 with:
