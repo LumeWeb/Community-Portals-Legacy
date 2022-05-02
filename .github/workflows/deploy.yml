@@ -15,7 +15,7 @@ jobs:
             -   name: Validate JSON
                 run: |
                     npm install -g ajv-cli
-                    ajv test -s schema.json -d portals.json
+                    ajv test  -s schema.json -d portals.json --valid
 
             -   name: Deploy to Skynet
                 uses: LumeWeb/deploy-to-skynet-action@main
