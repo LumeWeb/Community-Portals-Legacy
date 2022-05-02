@@ -13,7 +13,7 @@ jobs:
         steps:
             -   uses: actions/checkout@v2
             -   name: Validate JSON
-                uses: OrRosenblatt/validate-json-action
+                uses: OrRosenblatt/validate-json-action@0.1.0
                 with:
                     INPUT_JSONS: portals.json
             -   name: Deploy to Skynet
