@@ -4,19 +4,23 @@
 name: Deploy Portal List
 
 on:
-  push:
-    branches: [master]
+    push:
+        branches: [ master ]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to Skynet
-        uses: LumeWeb/deploy-to-skynet-action@main
-        with:
-            upload-file: portals.json
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-            portal-url: https://fileportal.org
-            registry-seed: ${{ secrets.REGISTRY_SEED }}
-            registry-datakey: "community-portals"
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Validate JSON
+                uses: OrRosenblatt/validate-json-action
+                with:
+                    INPUT_JSONS: portals.json
+            -   name: Deploy to Skynet
+                uses: LumeWeb/deploy-to-skynet-action@main
+                with:
+                    upload-file: portals.json
+                    github-token: ${{ secrets.GITHUB_TOKEN }}
+                    portal-url: https://fileportal.org
+                    registry-seed: ${{ secrets.REGISTRY_SEED }}
+                    registry-datakey: "community-portals"
