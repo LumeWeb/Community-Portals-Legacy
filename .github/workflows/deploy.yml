@@ -13,9 +13,10 @@ jobs:
         steps:
             -   uses: actions/checkout@v2
             -   name: Validate JSON
-                uses: OrRosenblatt/validate-json-action@0.1.0
-                with:
-                    json: portals.json
+                run: |
+                    npm install -g ajv-cli
+                    ajv -s schema.json portals.json
+
             -   name: Deploy to Skynet
                 uses: LumeWeb/deploy-to-skynet-action@main
                 with:
