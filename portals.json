@@ -1,14 +1,10 @@
 {
-  "fileportal.org": {
-    "supports": [
-      "dns",
-      "registry"
-    ],
-    "pubkey": "Omkq3gTKAil75U-p1CeyEoq-pQWFKYH5Z31x9GiQvOM.OLWIuw8_h4o03HtNnc7x_egpxW5Q5LaBK9u-8mI7QNg"
-  },
-  "direct.fileportal.org": {
-    "supports": [
-      "web3link"
-    ]
-  }
+    "web3portal.com": {
+        "supports": [
+            "dns",
+            "registry",
+            "web3link"
+        ],
+        "pubkey": "Omkq3gTKAil75U-p1CeyEoq-pQWFKYH5Z31x9GiQvOM.OLWIuw8_h4o03HtNnc7x_egpxW5Q5LaBK9u-8mI7QNg"
+    }
 }
